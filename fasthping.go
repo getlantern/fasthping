@@ -51,6 +51,9 @@ func main() {
 			next = c
 		}
 		for l := range iterateLines(os.Stdin) {
+			if _, exists := hosts[l]; exists {
+				continue
+			}
 			<-next
 			ch <- l
 		}
