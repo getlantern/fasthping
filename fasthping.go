@@ -82,7 +82,7 @@ func readLines(fname string) []string {
 func iterateLines(f *os.File) <-chan string {
 	ch := make(chan string)
 	go func() {
-		scanner := bufio.NewScanner(os.Stdin)
+		scanner := bufio.NewScanner(f)
 		for scanner.Scan() {
 			ch <- scanner.Text()
 		}
