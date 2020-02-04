@@ -18,7 +18,7 @@ import (
 
 var (
 	excludeHosts    = flag.String("eh", "", "The path of the file containing list of hosts to exclude from the candidates.")
-	excludeIPRanges = flag.String("ei", "", "The path of the file containing list of ip ranges to exclude from the candidates. In the form of x.x.x.x-x.x.x.x")
+	excludeIPRanges = flag.String("ei", "", "The path of the file containing list of IP ranges to exclude from the candidates. IP ranges should be in CIDR notation.")
 	interval        = flag.Duration("i", 0, "The interval to wait before ping the next candidate. No wait if absent.")
 	timeout         = flag.Duration("t", 0, "timeout before giving up ping a host. System default if absent.")
 	workers         = flag.Int("w", runtime.NumCPU(), "Number of workers. Match the CPU count if absent.")
